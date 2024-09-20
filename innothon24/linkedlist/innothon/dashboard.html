@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMS - Dashboard</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+        }
+
+    
+        .sidebar {
+            background-color: #333;
+            color: white;
+            width: 200px;
+            padding: 30px;
+        }
+
+        .sidebar h1 {
+            margin-top: 0;
+            margin-bottom: 50px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 20px;
+        }
+
+        .sidebar li a {
+            display: block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sidebar li a:hover {
+            background-color: #555;
+        }
+
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .sidebar a i {
+            margin-right: 10px;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            margin: 0;
+        }
+
+        .header .search {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .search input {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+
+        .header .search button {
+            background-color: #333;
+            color: white;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            
+        }
+
+        .card {
+            background-color:#6bacf7;
+            padding: 20px;
+            border-radius: 10px;
+            flex: 1;
+            
+        }
+
+        .card .icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #eee;
+            margin-bottom: 50px;
+        }
+
+        .card .icon i {
+            font-size: 20px;
+            color: #333;
+        }
+
+        .card .title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card .value {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .card .more-info {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .card.more-info a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .monthly-report {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .monthly-report .title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .monthly-report .chart {
+            width: 100%;
+            height: 300px;
+            background-color: #eee;
+            border-radius: 10px;
+        }
+
+        .sales-analytics {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .sales-analytics .title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .sales-analytics .online {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .sales-analytics .online .value {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .sales-analytics .chart {
+            width: 100%;
+            height: 100px;
+            background-color: #eee;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1>Work Manager</h1>
+            <ul>
+                <li><i class="fas fa-home"></i> Dashboard</li>
+                <li><a href="#"><i class="fa-solid fa-user"></i></i> Employees</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Management</a></li>
+                <li><a href="#"><i class="fas fa-clock"></i> Schedule</a></li>
+                <li><a href="#"><i class="fas fa-calendar-alt"></i> Attendance Sheet</a></li>
+                <li><a href="#"><i class="fas fa-calendar-day"></i> Attendance</a></li>
+                <li><a href="#"><i class="fas fa-exclamation-triangle"></i> Late Time</a></li>
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i> Leave</a></li>
+                <li><a href="#"><i class="fas fa-stopwatch"></i> Over Time</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="header">
+                <h1>Dashboard</h1>
+                <div class="search">
+                    <input type="text" placeholder="Search...">
+                    <button type="submit">Search</button>
+                </div>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="icon"><i class="fas fa-user"></i></div>
+                    <div class="title">TOTAL EMPLOYEES</div>
+                    <div class="value">5</div>
+                    <div class="more-info"><a href="#">More info</a></div>
+                </div>
+                <div class="card">
+                    <div class="icon"><i class="fas fa-clock"></i></div>
+                    <div class="title">ON TIME PERCENTAGE</div>
+                    <div class="value">0%</div>
+                    <div class="more-info"><a href="#">More info</a></div>
+                </div>
+                <div class="card">
+                    <div class="icon"><i class="fas fa-check-square"></i></div>
+                    <div class="title">ON TIME TODAY</div>
+                    <div class="value">0</div>
+                    <div class="more-info"><a href="#">More info</a></div>
+                </div>
+                <div class="card">
+                    <div class="icon"><i class="fas fa-exclamation-triangle"></i></div>
+                    <div class="title">LATE TODAY</div>
+                    <div class="value">1</div>
+                    <div class="more-info"><a href="#">More info</a></div>
+                </div>
+            </div>
+            <div class="monthly-report">
+                <div class="title">Monthly Report</div>
+                <div class="chart"></div>
+            </div>
+            <div class="sales-analytics">
+                <div class="title">Sales Analytics</div>
+                <div class="online">
+                    <div>Online</div>
+                    <div class="value">1,542</div>
+                </div>
+                <div class="chart"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

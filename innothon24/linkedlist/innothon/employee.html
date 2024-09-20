@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AMS</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #333;
+  color: #fff;
+  padding: 30px;
+  height: 100vh;
+  width: 200px;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header .search-bar {
+  display: flex;
+  align-items: center;
+}
+
+.header .search-bar input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.header .search-bar button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 30px;
+}
+
+.menu-list li {
+  margin-bottom: 20px;
+}
+
+.menu-list li a {
+  display: block;
+  padding: 10px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-list li a:hover {
+  background-color: #555;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.table th, .table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table th {
+  background-color: #f0f0f0;
+}
+
+.table .actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.table .actions button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.table .actions button.edit {
+  background-color: #4CAF50;
+  color: #fff;
+}
+
+.table .actions button.delete {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 5px;
+}
+
+.pagination button.active {
+  background-color: #28a745;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="sidebar">
+    <h1>Worker Manager</h1>
+    <ul class="menu-list">
+      <li><a href="#">Dashboard</a></li>
+      <li><a href="#">Employees</a></li>
+      <li><a href="#">Employees List</a></li>
+      <li><a href="#">Schedule</a></li>
+      <li><a href="#">Attendance Sheet</a></li>
+      <li><a href="#">Attendance</a></li>
+      <li><a href="#">Late Time</a></li>
+      <li><a href="#">Leave</a></li>
+      <li><a href="#">Over Time</a></li>
+    </ul>
+  </div>
+  <div class="main">
+    <div class="header">
+      <h1>Employees</h1>
+      <div class="search-bar">
+        <input type="text" placeholder="Search..">
+        <button>Search</button>
+      </div>
+      <button>+ Add</button>
+    </div>
+    <div>
+      <button>Copy</button>
+      <button>Excel</button>
+      <button>PDF</button>
+      <select>
+        <option value="column visibility">Column visibility</option>
+      </select>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Employee ID</th>
+          <th>Name</th>
+          <th>position</th>
+          <th>Email</th>
+          <th>Schedule</th>
+          <th>Member Since</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Ahmad</td>
+          <td>Developer</td>
+          <td>ahmad@gmail.com</td>
+          <td>Day_Shift</td>
+          <td>2021-11-25 13:25:46</td>
+          <td class="actions">
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>ali</td>
+          <td>Designer</td>
+          <td>ali@abc.com</td>
+          <td>Day_Shift</td>
+          <td>2021-11-25 16:34:55</td>
+          <td class="actions">
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>Lima</td>
+          <td>Assistant</td>
+          <td>lima@abc.com</td>
+          <td>Night_Shift</td>
+          <td>2021-11-25 16:45:51</td>
+          <td class="actions">
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>Jamil</td>
+          <td>Assistant</td>
+          <td>jamil@abc.com</td>
+          <td>Day_Shift</td>
+          <td>2021-11-27 11:00:38</td>
+          <td class="actions">
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+          </td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>mahmood</td>
+          <td>Developer</td>
+          <td>mahmod@abc.com</td>
+          <td>Day_Shift</td>
+          <td>2021-11-30 09:57:58</td>
+          <td class="actions">
+            <button class="edit">Edit</button>
+            <button class="delete">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="pagination">
+      <button>Previous</button>
+      <button class="active">1</button>
+      <button>Next</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
